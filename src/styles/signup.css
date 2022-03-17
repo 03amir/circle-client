@@ -1,0 +1,31 @@
+.signupframe{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    align-items: center;
+   font-size: 4rem;
+    
+}
+
+.signupsubframe{
+    display: flex;
+    justify-content: space-between;
+    width:70%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signupcard{
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+input,button{
+    
+    font-size: 2rem;
+
+}

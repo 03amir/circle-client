@@ -1,0 +1,24 @@
+.frame{
+    display: flex;
+    justify-content: space-between;
+    width:94%;
+    align-items: center;
+    flex-direction: row;
+}
+
+.mainframe{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+}
+
+.mid{
+    display: flex;
+    justify-content: space-between;
+    width:20%;
+    align-items: center;
+    flex-direction: row;
+
+}
