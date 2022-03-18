@@ -1,0 +1,35 @@
+.homeframe{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.postframe{
+    width: 60%;
+}
+.like{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+
+}
+.comment{
+    display: flex;
+    justify-content:space-between;
+    width:100%;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.singlecomment{
+    display: flex;
+    justify-content:space-between;
+    width:100%;
+    align-items: center;
+    flex-direction: row;
+}

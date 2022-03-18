@@ -1,0 +1,54 @@
+.profileframe{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    align-items: center;
+    flex-direction: column;
+  
+}
+
+.detailscard{
+    display: flex;
+    justify-content: space-between;
+    width:60%;
+    align-items: center;
+    flex-direction: row;
+}
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+    flex-direction: column;
+}
+
+.populariti{
+    display: flex;
+    justify-content: space-between;
+ gap: 1rem;
+    align-items: center;
+    flex-direction: row;
+}
+
+.posts{
+
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.prev{
+
+    display: flex;
+    justify-content: space-between;
+    width:80%;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+}
