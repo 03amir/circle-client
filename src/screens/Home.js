@@ -3,20 +3,25 @@ import '../styles/home.css';
 import  Axios  from 'axios';
 
 function Home(props) {
+
+    const [posts,setPosts] = useState({})
     useEffect(() => {
         getAllPost()
     }, [])
     
 
   async function getAllPost(){
-      const data = await Axios.get("http://localhost:8000/allposts",{
+     Axios.get("http://localhost:8000/allposts",{
           headers:{
               Authorization:"Bearer "+localStorage.getItem("jwtcircle")
           }
+      }).then((res)=>{
+          setPosts(res.data)
+        console.log(res)
       })
 
-      const res = await data.json();
-      console.log(res)
+   
+
 
 
 
