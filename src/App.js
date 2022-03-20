@@ -27,7 +27,7 @@ const Routing  = ()=> {
     const user = JSON.parse(localStorage.getItem("usercircle"));
   if(user){
     dispatch({type:"USER",payload:user})
-    navigate("/")
+   
   }
   else{
     navigate("/login")

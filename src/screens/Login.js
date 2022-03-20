@@ -34,6 +34,8 @@ function Login(props) {
                 dispatch({type:"USER",payload:res.data.user})
                 navigate("/")
             }
+        }).catch(err=>{
+            console.log(err)
         })
     
     

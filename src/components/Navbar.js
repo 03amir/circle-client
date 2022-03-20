@@ -1,11 +1,12 @@
 import React,{useContext} from "react";
 import "../styles/navbar.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Logo from './Logo.png'
 import { userContext } from '../App';
 
 
 function Navbar(props) {
+  const navigate = useNavigate();
 
   const { state, dispatch}=useContext(userContext);
   const renderList =()=>{
@@ -18,7 +19,13 @@ function Navbar(props) {
       <Link to={"/create"}>
         <div className="circle">Create</div>
       </Link>,
-       <button>Log Out</button>
+       <button onClick={
+         ()=>{
+           localStorage.clear();
+           dispatch({type:"NONE"});
+           navigate("/login")
+         }
+       }>Log Out</button>
   
       ]
     }

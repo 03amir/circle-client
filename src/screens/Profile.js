@@ -1,7 +1,39 @@
-import React from 'react';
+import React,{useState,useEffect,useContext} from 'react';
 import '../styles/profile.css'
+import  Axios from 'axios';
+import { userContext } from '../App';
 
 function Profile(props) {
+    const{ state, dispatch} = useContext(userContext);
+
+
+  const [myposts,setMyposts]= useState([])
+   useEffect(() => {
+       getMy()
+     
+   }, [])
+
+   function getMy(){
+       Axios.get("http://localhost:8000/mypost",{
+        headers:{
+            Authorization:"Bearer "+localStorage.getItem("jwtcircle")
+        }
+       }).then(res=>{
+           console.log(res.data.mypost)
+           setMyposts(res.data.mypost)
+       })
+       
+   }
+   
+
+
+
+
+
+
+
+
+
     return (
         <div className='profileframe'>
            <div className="detailscard">
@@ -10,7 +42,7 @@ function Profile(props) {
                </div>
 <div className="details">
     <div className="name">
-        <h2>amirul sekh</h2>
+        <h2>{state?state.name:"Loading"}</h2>
     </div>
     <div className="populariti">
         <div className="posts">
@@ -38,15 +70,19 @@ function Profile(props) {
 
            </div>
 
-  <div className="prev">
-  <img src="https://az617363.vo.msecnd.net/imgmodels/styles/fashion_speaker/imgmodelsprod/speakers/fields/field_speaker_image/gigi_2.jpg" alt="" />
-  <img src="https://az617363.vo.msecnd.net/imgmodels/styles/fashion_speaker/imgmodelsprod/speakers/fields/field_speaker_image/gigi_2.jpg" alt="" />
-  <img src="https://az617363.vo.msecnd.net/imgmodels/styles/fashion_speaker/imgmodelsprod/speakers/fields/field_speaker_image/gigi_2.jpg" alt="" />
-  <img src="https://az617363.vo.msecnd.net/imgmodels/styles/fashion_speaker/imgmodelsprod/speakers/fields/field_speaker_image/gigi_2.jpg" alt="" />
-  <img src="https://az617363.vo.msecnd.net/imgmodels/styles/fashion_speaker/imgmodelsprod/speakers/fields/field_speaker_image/gigi_2.jpg" alt="" />
+           <div className="prev">
+  {
+      myposts.map((post)=>{
+          return(
+         
+                <img src={post.photo}alt={post.title} />
 
-    <img src="https://az617363.vo.msecnd.net/imgmodels/styles/fashion_speaker/imgmodelsprod/speakers/fields/field_speaker_image/gigi_2.jpg" alt="" />
+          )
+      })
+      
+  }
   </div>
+  
 
 
 
