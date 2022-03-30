@@ -42,7 +42,7 @@ Circle | MERN Stack
 
 ### Features:
 
-Uers can update their profile and sort posts based on their followings User authetication with enability to reset password via email notification Lets users post images with title Lets users like & dislike posts Lets users comment on others post Lets users view other users profile Lets user follow & unfollow other users Search feature to search people on this webiste
+For now, Uers can make new profiile , login to their profiel make a new post. Can like others post comment on their post , can fetch their past posts details.
 
 ### About
 I started developing a social media app.
