@@ -70,17 +70,26 @@ function Profile(props) {
 
            </div>
 
+   <div className="prevframe">
+
+   
            <div className="prev">
   {
       myposts.map((post)=>{
           return(
-         
-                <img src={post.photo}alt={post.title} />
 
+            <div className="imgsdiv">
+                 <img src={post.photo}alt={post.title} />
+
+
+            </div>
+         
+               
           )
       })
       
   }
+  </div>
   </div>
   
 

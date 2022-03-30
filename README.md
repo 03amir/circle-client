@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center"> Circle </h1>
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+<!-- ---------------------------------------------------------------------------------------------------------------------- -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<!-- ---------------------------------------------------------------------------------------------------------------------- -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
+  <strong> Created a clone of Social Media app using MERN stack. </strong>
+    <br />
+ 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- ---------------------------------------------------------------------------------------------------------------------- -->
+<!-- TABLE OF CONTENTS --> 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Table of Contents :
+* [Overview](#Overview)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* [Prerequisites](#Prerequisites)
+* [Snapshots of this Project](#Snapshots-of-this-Project)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  
+<p align="right">(<a href="#Bottom">Bottom</a>)</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+## Overview
 
-### Code Splitting
+Circle | MERN Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Features:
 
-### Analyzing the Bundle Size
+Uers can update their profile and sort posts based on their followings User authetication with enability to reset password via email notification Lets users post images with title Lets users like & dislike posts Lets users comment on others post Lets users view other users profile Lets user follow & unfollow other users Search feature to search people on this webiste
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### About
+I started developing a social media app.
+Basically it allows you to login and upload posts (with images & coordinates), like and comment on posts.
 
-### Making a Progressive Web App
+I learnt a lot about react & backend stuff while doing this including:
+- best ways to upgrade a projects packages (which proves to be hard some times)
+- write clean client-side & server-side modules
+- changing the boilerplate
+- optimize bits of code
+- much more...
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Advanced Configuration
+### What I learnt about react
+- It's really easy to prototype web-apps quickly, but when it comes to refining them and adding smaller details, the development time starts to slow down. 
+- The styling is quite hard, at first, to get right.
+- It's got an amazing community that spends a lot of time improving the codebase everyday!
+- Changing react versions can prove to be a hard task. Build error, npm package dependcies, and more...
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+ #### Tech-Stack used :
 
-### Deployment
+  ![HTML 5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+  ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+  ![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+  ![Nodejs](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+  ![Reactjs](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+  ![Mangodb](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+## Prerequisites
+
+Usage (run fullstack app on your machine)
+
+- [MongoDB](https://gist.github.com/nrollr/9f523ae17ecdbb50311980503409aeb3)
+- [Node](https://nodejs.org/en/download/) ^10.0.0
+- [npm](https://nodejs.org/en/download/package-manager/)
+
+notice, you need client and server runs concurrently in different terminal session, in order to make them talk to each other
+
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+## Snapshots of this Project
+
+### User can sign in or sign up
+
+![User can sign in or sign up](https://github.com/riyajha2305/Instagram-Clone/blob/master/screenshots/1.png)
+
+<br>
+
+### User visit Feed page
+
+![User visit Feed page](https://github.com/riyajha2305/Instagram-Clone/blob/master/screenshots/2.png)
+
+<br>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### User can go to his/her profile page
+
+![User can go to his/her profile page](https://github.com/riyajha2305/Instagram-Clone/blob/master/screenshots/3.png)
+
+<br>
+
+### User can visit other users profile and follow/unfollow
+
+![User can visit other users profile and follow/unfollow](https://github.com/riyajha2305/Instagram-Clone/blob/master/screenshots/4.png)
+
+
+
+<br>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------

@@ -4,11 +4,56 @@
     width:100%;
     align-items: center;
     flex-direction: column;
+    margin-top: 40px;
+    
+}
+.poster{
+    display: flex;
+    justify-content:flex-start;
+    
+    align-items: center;
+    flex-direction: row;
+   
+    gap: 10px;
+
+}
+.userlogo{
+    font-size: 30px;
+}
+
+.captions{
+    margin-top: -10px;
+    font-size: 27px;
+
 }
 
 .postframe{
     width: 60%;
+    border: 1px solid black;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
 }
+.postimage{
+    object-fit:cover;
+    
+    width: 100%;
+   
+   
+
+}
+
+.postimage img{
+    height: 100%;
+    width: 100%;
+
+    border-radius:4px;
+}
+
+
+
+
+
 .like{
     display: flex;
     justify-content: space-between;
@@ -17,12 +62,60 @@
     flex-direction: row;
 
 }
+.commentSquare{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    align-items: center;
+    flex-direction: row;
+
+
+}
+.commentbtn{
+    max-width: 160px;
+    background-color: #3A3A3A;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.likedislike{
+    cursor: pointer;
+}
+.likesquare{
+    display: flex;
+    justify-content: space-between;
+    width: 13%;
+    align-items: center;
+    flex-direction: row;
+
+
+}
+.likes{
+    font-size: 19px;
+}
+
+.commentbox{
+    max-width: 350px;
+}
 .comment{
     display: flex;
-    justify-content:space-between;
-    width:100%;
-    align-items: center;
+    justify-content:flex-start;
+    width:98%;
+    align-items:flex-start;
     flex-direction: column;
+    border: .6px solid black;
+    border-radius:8px ;
+    text-align: start;
+    padding: 10px;
+
+}
+.comment commentedby{
+    font-size: 15px;
+}
+
+
+.comment comments{
+    font-size: 10px;
 
 }
 

@@ -1,12 +1,14 @@
-import React, { useState, useEffect,useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../styles/home.css";
 import Axios from "axios";
-import {userContext} from '../App'
+import { userContext } from "../App";
+import { AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
+import { BiUserCircle } from "react-icons/bi";
 
 function Home(props) {
   const [posts, setPosts] = useState([]);
   const [comment, setComment] = useState("");
-  const {state, dispatch}= useContext(userContext)
+  const { state, dispatch } = useContext(userContext);
 
   useEffect(() => {
     getAllPost();
@@ -23,12 +25,12 @@ function Home(props) {
     });
   }
 
-  function pushComment(text,id) {
+  function pushComment(text, id) {
     Axios.put(
       "http://localhost:8000/comment",
       {
-        text:text,
-        postId:id,
+        text: text,
+        postId: id,
       },
       {
         headers: {
@@ -38,22 +40,18 @@ function Home(props) {
     ).then((datas) => {
       console.log(datas.data.result);
       //setPosts(data.data.posts);
-      const newData = posts.map((item)=>{
-        if(item._id==datas.data.result._id){
-          return datas.data.result
+      const newmsgdata = posts.map((item) => {
+        if (item._id == datas.data.result._id) {
+          return datas.data.result;
+        } else {
+          return item;
         }
-        else{
-         return item
-        }
-      })
+      });
 
-      setPosts(newData)
-      
-    
-  //console.log(newData)
+      setPosts(newmsgdata);
 
+      //console.log(newData)
     });
-    
   }
 
   function getLikes(id) {
@@ -70,19 +68,17 @@ function Home(props) {
     ).then((datas) => {
       console.log(datas.data);
       //setPosts(data.data.posts);
-      
-      const newData = posts.map((item)=>{
-        if(item._id==datas.data.result._id){
-          return datas.data.result
-        }
-        else{
-         return item
-        }
-      })
 
-  setPosts(newData)
-  //console.log(newData)
+      const newData = posts.map((item) => {
+        if (item._id == datas.data.result._id) {
+          return datas.data.result;
+        } else {
+          return item;
+        }
+      });
 
+      setPosts(newData);
+      //console.log(newData)
     });
   }
 
@@ -100,18 +96,17 @@ function Home(props) {
     ).then((datas) => {
       console.log(datas.data);
       //setPosts(data.data.posts);
-      
-      const newData = posts.map((item)=>{
-        if(item._id==datas.data.result._id){
-          return datas.data.result
-        }
-        else{
-         return item
-        }
-      })
 
-  setPosts(newData)
-  //console.log(newData)
+      const newData = posts.map((item) => {
+        if (item._id == datas.data.result._id) {
+          return datas.data.result;
+        } else {
+          return item;
+        }
+      });
+
+      setPosts(newData);
+      //console.log(newData)
     });
   }
 
@@ -121,60 +116,76 @@ function Home(props) {
         {posts.map((post) => {
           return (
             <div className="postframe">
-              <h2>{post.postedBy.name}</h2>
-              <h3>{post.title}</h3>
+              <div className="poster">
+                <BiUserCircle className="userlogo" />
+                <h2>{post.postedBy.name}</h2>
+              </div>
+
+              <h3 className="captions">{post.title}</h3>
               <div className="postimage">
                 <img src={post.photo} alt="" />
               </div>
+
               <div className="like">
-              {
-                post.likes.includes(state._id)?(
+                <div className="likesquare">
+
+                {post.likes.includes(state._id) ? (
                   <h1
-                onClick={() => {
-                  getDislikes(post._id);
-                }}
-              >
-                Dis like
-              </h1>
+                    onClick={() => {
+                      getDislikes(post._id);
+                    }}
+                  >
+                    <AiOutlineDislike className="likedislike" />
+                  </h1>
+                ) : (
+                  <h1
+                    onClick={() => {
+                      getLikes(post._id);
+                    }}
+                  >
+                    <AiOutlineLike className="likedislike" />
+                  </h1>
+                )}
 
-                ): 
+                <h2 className="likes"> {post.likes.length} likes </h2>
 
-<h1
-onClick={() => {
-  getLikes(post._id);
-}}
->
-like
-</h1>
-              }
-              
-               
-               
-
-                <h2> {post.likes.length} likes </h2>
+                </div>
                 
-                <input type="text" value={comment} onChange={(e)=>{
-                  setComment(e.target.value)
-                  console.log(e.target.value)
-                }} placeholder="say something" />
-              
-                
-                <button onClick={()=>{pushComment(comment,post._id)}}>Comment</button>
+
+
+                  <div className="commentSquare">
+                  <input
+                className="commentbox"
+                  type="text"
+                  value={comment}
+                  onChange={(e) => {
+                    setComment(e.target.value);
+                    console.log(e.target.value);
+                  }}
+                  placeholder="say something"
+                />
+
+                <button className="commentbtn"
+                  onClick={() => {
+                    pushComment(comment, post._id);
+                  }}
+                >
+                  Comment
+                 
+                </button>
+
+
+                  </div>
+             
               </div>
               <div className="comment">
-                {
-                  post.comments.map((comment)=>{
-                    return (
-                      <h2>{comment.postedBy.name} <span>{comment.text}</span></h2>
-                    )
-                  })
-                }
-                
-
-
-                
-
-               
+                {post.comments.map((comment) => {
+                  return (
+                    <h2 className="commentedby">
+                      {comment.postedBy.name} :  <span className="comments">{comment.text}</span>
+                    </h2>
+                  );
+                })}
               </div>
             </div>
           );

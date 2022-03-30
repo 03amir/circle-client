@@ -1,31 +1,94 @@
-.signupframe{
-    display: flex;
-    justify-content: center;
-    width:100%;
-    align-items: center;
-   font-size: 4rem;
-    
+.signupframe {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  height: 80vh;
+  align-items: center;
+  font-size: 4rem;
+
+  margin: auto;
 }
 
-.signupsubframe{
-    display: flex;
-    justify-content: space-between;
-    width:70%;
-    align-items: center;
-    flex-direction: column;
+.signupsubframe {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  align-items: center;
+  flex-direction: column;
 }
 
-.signupcard{
-    display: flex;
-    justify-content: space-between;
-    
-    align-items: center;
-    flex-direction: column;
-    gap: 30px;
+.signupcard {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
 }
 
-input,button{
-    
-    font-size: 2rem;
+.logo {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  user-select: none;
 
+  width: 40%;
 }
+
+input,
+button {
+  width: 100%;
+  height: 45px;
+  border-radius: 6px;
+  outline: none;
+  border: 2px solid black;
+}
+
+input[type="text"] {
+  color: black;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+.signupbtn {
+  border: none;
+  text-align: start;
+  background-color: #2f9784;
+  color: white;
+  padding-left: 20px;
+  font-size: 22px;
+  cursor: pointer;
+}
+.signupbtn:hover {
+  background-color: #077460;
+}
+
+::placeholder {
+  color: black;
+}
+
+@media only screen and (max-width: 360px) {
+
+    .signupframe {
+       margin-top: 30px;
+      }
+
+    .signupcard {
+        
+        width: 80%;
+        
+      }
+
+      .signupsubframe {
+       
+        width: 95%;
+        
+      }
+   
+  }

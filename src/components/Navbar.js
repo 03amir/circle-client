@@ -1,67 +1,68 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import "../styles/navbar.css";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import Logo from './Logo.png'
-import { userContext } from '../App';
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import Logo from "./Logo.png";
+import { userContext } from "../App";
+import { FaUser,FaFileUpload } from 'react-icons/fa';
 
 
 function Navbar(props) {
   const navigate = useNavigate();
 
-  const { state, dispatch}=useContext(userContext);
-  const renderList =()=>{
-    if(state){
-      return[
-        <Link to={"/profile"}>
-        <div className="circle">profile</div>
-      </Link>,
+  const { state, dispatch } = useContext(userContext);
+  const renderList = () => {
+    if (state) {
+      return [
+        <div className="mid" >
+        <div className="midcenter" >
+        <NavLink to={"/profile"}>
+        <div className="circle">
+          <FaUser />
+          </div>
+        </NavLink>
 
-      <Link to={"/create"}>
-        <div className="circle">Create</div>
-      </Link>,
-       <button onClick={
-         ()=>{
-           localStorage.clear();
-           dispatch({type:"NONE"});
-           navigate("/login")
-         }
-       }>Log Out</button>
-  
-      ]
-    }
-    else{
-     return [
-          
-
+        <NavLink to={"/create"}>
+          <div className="circle">
+          <FaFileUpload />
+          </div>
          
+        </NavLink>
 
-      <Link to={"/login"}>
-        <div className="circle">Login</div>
-      </Link>,
-      <Link to={"/signup"}>
-        <div className="circle">Sign up</div>
-      </Link>
-    ]
-
+        </div>
+         
+        <button className="logout"
+          onClick={() => {
+            localStorage.clear();
+            dispatch({ type: "NONE" });
+            navigate("/login");
+          }}
+        >
+          Log Out
+        </button>
+      
+        </div>
+      ];
+    } else {
+      return [
+        <div className="left">
+        <NavLink to={"/login"} style={{ textDecoration: 'none' }} activeclassname='is-active'>
+          <div className="singupNav">Login</div>
+        </NavLink>
+        <NavLink to={"/signup"} style={{ textDecoration: 'none' }} activeclassname='is-active'>
+          <div className="singupNav">Sign up</div>
+        </NavLink>
+        </div>
+      ];
     }
-  
-  }
-
-
-
+  };
 
   return (
     <div className="mainframe">
       <div className="frame">
-      <Link to={state?"/":"login"}>
-          <img src={Logo} alt="logo" className="logo" />
-        </Link>
- {
-   renderList()
- }
-        
-
-       
+        <NavLink to={state ? "/" : "login"}>
+          <img src={Logo} alt="logo" className="logomain" />
+        </NavLink>
+        {renderList()}
       </div>
     </div>
   );
