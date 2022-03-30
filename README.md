@@ -107,35 +107,17 @@ notice, you need client and server runs concurrently in different terminal sessi
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
-## Snapshots of this Project
+## Demo
 
-### User can sign in or sign up
+### 
 
-![User can sign in or sign up](https://github.com/riyajha2305/Instagram-Clone/blob/master/screenshots/1.png)
-
-<br>
-
-### User visit Feed page
-
-![User visit Feed page](https://github.com/riyajha2305/Instagram-Clone/blob/master/screenshots/2.png)
-
-<br>
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-### User can go to his/her profile page
-
-![User can go to his/her profile page](https://github.com/riyajha2305/Instagram-Clone/blob/master/screenshots/3.png)
-
-<br>
-
-### User can visit other users profile and follow/unfollow
-
-![User can visit other users profile and follow/unfollow](https://github.com/riyajha2305/Instagram-Clone/blob/master/screenshots/4.png)
+![User can sign in or sign up]('./video/bandicam 2022-03-30 11-52-34-457.mp4')
 
 
 
 <br>
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
