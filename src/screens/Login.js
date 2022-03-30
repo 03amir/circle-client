@@ -15,7 +15,7 @@ function Login(props) {
   const [password, setPassword] = useState("");
 
   function loginUser() {
-    Axios.post("https://circlesocial.herokuapp.com//login", {
+    Axios.post("https://circlesocial.herokuapp.com/login", {
       password: password,
       email: email,
     })
