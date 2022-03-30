@@ -15,7 +15,7 @@ function Home(props) {
   }, []);
 
   function getAllPost() {
-    Axios.get("http://localhost:8000/allposts", {
+    Axios.get("https://circlesocial.herokuapp.com/allposts", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwtcircle"),
       },
@@ -27,7 +27,7 @@ function Home(props) {
 
   function pushComment(text, id) {
     Axios.put(
-      "http://localhost:8000/comment",
+      "https://circlesocial.herokuapp.com/comment",
       {
         text: text,
         postId: id,
@@ -56,7 +56,7 @@ function Home(props) {
 
   function getLikes(id) {
     Axios.put(
-      "http://localhost:8000/like",
+      "https://circlesocial.herokuapp.com/like",
       {
         postId: id,
       },
@@ -84,7 +84,7 @@ function Home(props) {
 
   function getDislikes(id) {
     Axios.put(
-      "http://localhost:8000/dislike",
+      "https://circlesocial.herokuapp.com/dislike",
       {
         postId: id,
       },

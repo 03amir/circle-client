@@ -1,83 +1,97 @@
-import  Axios  from 'axios';
-import React, { useState , useEffect} from 'react';
-import '../styles/signup.css'
-import { useNavigate} from 'react-router-dom';
+import Axios from "axios";
+import React, { useState, useEffect } from "react";
+import "../styles/signup.css";
+import { useNavigate } from "react-router-dom";
 
 function Create(props) {
-  const [title,setTitle]= useState("")
-  const [body,setBody]= useState("")
-  const [image,setImage]= useState("")
-  const [url,setUrl]= useState("")
-  const navigate = useNavigate()
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [image, setImage] = useState("");
+  const [url, setUrl] = useState("");
+  const navigate = useNavigate();
 
-  const token  = localStorage.getItem("jwtcircle")
-
+  const token = localStorage.getItem("jwtcircle");
 
   //we have to use the use effect to prevent errors beacuse the generation of the url may take a  little bit longer time
   useEffect(() => {
-   if(url){
-    Axios.post("http://localhost:8000/createpost",{
-        title,
-        body,
-        pic:url
-    },{
-        headers: {
-          Authorization: 'Bearer ' +token
+    if (url) {
+      Axios.post(
+        "https://circlesocial.herokuapp.com/createpost",
+        {
+          title,
+          body,
+          pic: url,
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
         }
-      }).then((res)=>{
+      ).then((res) => {
         console.log(res);
-        if(res.status==202){
-            navigate("/")
+        if (res.status == 202) {
+          navigate("/");
         }
-    })
+      });
+    }
+  }, [url]);
 
-   }
-  }, [url])
-  
-
-  function setPost(){
-      const data = new FormData();
-      data.append("file",image)
-      data.append("upload_preset","circle")
-      data.append("cloud_name","amir")
-      Axios.post("https://api.cloudinary.com/v1_1/circle1/image/upload",data).then((data)=>{
-          setUrl(data.data.url)
-      })
-
- 
-
-
-
+  function setPost() {
+    const data = new FormData();
+    data.append("file", image);
+    data.append("upload_preset", "circle");
+    data.append("cloud_name", "amir");
+    Axios.post(
+      "https://api.cloudinary.com/v1_1/circle1/image/upload",
+      data
+    ).then((data) => {
+      setUrl(data.data.url);
+    });
   }
 
-    return (
-        <div>
-            <div>
-             <div className='signupframe'>
-            
-            <div className="signupsubframe">
-               
+  return (
+    <div>
+      <div>
+        <div className="signupframe">
+          <div className="signupsubframe">
             <div className="signupcard">
-                
-                <input type="text" placeholder='Tittle' value={title} onChange={(e)=>{setTitle(e.target.value)}}/>
-                <input type="text" placeholder='Body'value={body} onChange={(e)=>{setBody(e.target.value)}}/>
-                <input type="file" placeholder='upload image'  onChange={(e)=>{setImage(e.target.files[0])}}/>
-                <button className='signupbtn' onClick={()=>{
-                    setPost()
-                }}>
-
-                    Post
-
-                </button>
+              <input
+                type="text"
+                placeholder="Tittle"
+                value={title}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
+              />
+              <input
+                type="text"
+                placeholder="Body"
+                value={body}
+                onChange={(e) => {
+                  setBody(e.target.value);
+                }}
+              />
+              <input
+                type="file"
+                placeholder="upload image"
+                onChange={(e) => {
+                  setImage(e.target.files[0]);
+                }}
+              />
+              <button
+                className="signupbtn"
+                onClick={() => {
+                  setPost();
+                }}
+              >
+                Post
+              </button>
             </div>
-            </div>
-            </div>
-           
-           
-            
+          </div>
         </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default Create;
