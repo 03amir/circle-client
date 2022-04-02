@@ -73,7 +73,7 @@ input[type="text"] {
   color: black;
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 392px) {
 
     .signupframe {
        margin-top: 30px;

@@ -1,165 +1,138 @@
-.homeframe{
-    display: flex;
-    justify-content: center;
-    width:100%;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 90px;
-    
+.homeframe {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 90px;
 }
-.poster{
-    display: flex;
-    justify-content:flex-start;
-    
-    align-items: center;
-    flex-direction: row;
-   
-    gap: 10px;
+.poster {
+  display: flex;
+  justify-content: flex-start;
 
+  align-items: center;
+  flex-direction: row;
+
+  gap: 10px;
 }
-.userlogo{
-    font-size: 30px;
+.userlogo {
+  font-size: 30px;
 }
 
-.captions{
-    margin-top: -10px;
-    font-size: 27px;
-
+.captions {
+  margin-top: -10px;
+  font-size: 27px;
 }
 
-.postframe{
-    width: 60%;
-    border: 1px solid black;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 8px;
+.postframe {
+  width: 60%;
+  border: 1px solid black;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
 }
-.postimage{
-    object-fit:cover;
-    
-    width: 100%;
-   
-   
+.postimage {
+  object-fit: cover;
 
+  width: 100%;
 }
 
-.postimage img{
-    height: 100%;
-    width: 100%;
+.postimage img {
+  height: 100%;
+  width: 100%;
 
-    border-radius:4px;
+  border-radius: 4px;
 }
 
-
-
-
-
-.like{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-    flex-direction: row;
-
+.like {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  flex-direction: row;
 }
-.commentSquare{
-    display: flex;
-    justify-content: space-between;
-    width: 60%;
-    align-items: center;
-    flex-direction: row;
-
-
+.commentSquare {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  align-items: center;
+  flex-direction: row;
 }
-.commentbtn{
-    max-width: 160px;
-    background-color: #3A3A3A;
-    border: none;
-    color: white;
-    cursor: pointer;
+.commentbtn {
+  max-width: 160px;
+  background-color: #3a3a3a;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
-.likedislike{
-    cursor: pointer;
+.likedislike {
+  cursor: pointer;
 }
-.likesquare{
-    display: flex;
-    justify-content: space-between;
-    
-    align-items: center;
-    flex-direction: row;
+.likesquare {
+  display: flex;
+  justify-content: space-between;
 
-
+  align-items: center;
+  flex-direction: row;
 }
-.likes{
-    font-size: 19px;
+.likes {
+  font-size: 19px;
 }
 
-.commentbox{
-    max-width: 350px;
+.commentbox {
+  max-width: 350px;
 }
-.comment{
-    display: flex;
-    justify-content:flex-start;
-    width:98%;
-    align-items:flex-start;
-    flex-direction: column;
-    border: .6px solid black;
-    border-radius:8px ;
-    text-align: start;
-    padding: 10px;
-
+.comment {
+  display: flex;
+  justify-content: flex-start;
+  width: 98%;
+  align-items: flex-start;
+  flex-direction: column;
+  border: 0.6px solid black;
+  border-radius: 8px;
+  text-align: start;
+  padding: 10px;
 }
-.comment commentedby{
-    font-size: 15px;
-}
-
-
-.comment comments{
-    font-size: 10px;
-
+.comment commentedby {
+  font-size: 15px;
 }
 
-.singlecomment{
-    display: flex;
-    justify-content:space-between;
-    width:100%;
-    align-items: center;
-    flex-direction: row;
+.comment comments {
+  font-size: 10px;
 }
 
+.singlecomment {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  flex-direction: row;
+}
 
+.commentbox > input[type="text"] {
+  color: black;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  background-color: transparent;
+}
 
-@media only screen and (max-width: 390px) {
-    .postframe {
-        width: 80%;
-    }
- 
-    .comment {
-   
-        margin-left: -9px;}
-
-
-        .commentSquare {
-         
-            width: 65%;
-           
-        }
-
-       
-        .commentSquare {
-            gap: 5px;
-            width: 65%;
-        }
-
-       .commentbox input[type="text"] {
-            color: black;
-            padding: 12px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
-            font-size: 10px;
-            background-color: transparent;
-          
-        }
-
-
+@media only screen and (max-width: 392px) {
+  .postframe {
+    width: 80%;
   }
+
+  .comment {
+    margin-left: -9px;
+  }
+
+  .commentSquare {
+    width: 65%;
+  }
+
+  .commentSquare {
+    gap: 5px;
+    width: 65%;
+  }
+}

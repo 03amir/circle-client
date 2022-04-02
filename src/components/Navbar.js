@@ -6,10 +6,12 @@ import { userContext } from "../App";
 import { FaUser,FaFileUpload } from 'react-icons/fa';
 
 
-function Navbar(props) {
+function Navbar() {
+  
   const navigate = useNavigate();
 
   const { state, dispatch } = useContext(userContext);
+
   const renderList = () => {
     if (state) {
       return [

@@ -5,10 +5,13 @@ import { userContext } from "../App";
 import { AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
 
-function Home(props) {
+function Home() {
+
   const [posts, setPosts] = useState([]);
   const [comment, setComment] = useState("");
   const { state, dispatch } = useContext(userContext);
+
+  //gettin all the posts
 
   useEffect(() => {
     getAllPost();
@@ -17,13 +20,16 @@ function Home(props) {
   function getAllPost() {
     Axios.get("https://circlesocial.herokuapp.com/allposts", {
       headers: {
-        Authorization: "Bearer " + localStorage.getItem("jwtcircle"),
+        Authorization: "Bearer " + localStorage.getItem("jwtcircle"), //vlaidating the user
       },
     }).then((data) => {
       console.log(data.data.posts);
       setPosts(data.data.posts);
     });
   }
+
+
+  //function to make comments
 
   function pushComment(text, id) {
     Axios.put(
@@ -38,9 +44,7 @@ function Home(props) {
         },
       }
     ).then((datas) => {
-      console.log(datas.data.result);
-      //setPosts(data.data.posts);
-      const newmsgdata = posts.map((item) => {
+        const newmsgdata = posts.map((item) => {
         if (item._id == datas.data.result._id) {
           return datas.data.result;
         } else {
@@ -50,9 +54,11 @@ function Home(props) {
 
       setPosts(newmsgdata);
 
-      //console.log(newData)
+     
     });
   }
+
+  //for liking the post  and fetching total likes
 
   function getLikes(id) {
     Axios.put(
@@ -66,21 +72,23 @@ function Home(props) {
         },
       }
     ).then((datas) => {
-      console.log(datas.data);
-      //setPosts(data.data.posts);
+      
+      //reciving the new data after the like from the backend
 
       const newData = posts.map((item) => {
-        if (item._id == datas.data.result._id) {
+        if (item._id == datas.data.result._id) { //checking, the id of the post which the uder liked 
           return datas.data.result;
         } else {
           return item;
         }
       });
 
-      setPosts(newData);
-      //console.log(newData)
+      setPosts(newData);  // setting the all the posts with new like
+     
     });
   }
+
+  //for liking the post  and fetching total likes 
 
   function getDislikes(id) {
     Axios.put(
@@ -94,19 +102,18 @@ function Home(props) {
         },
       }
     ).then((datas) => {
-      console.log(datas.data);
-      //setPosts(data.data.posts);
+     
 
       const newData = posts.map((item) => {
-        if (item._id == datas.data.result._id) {
+        if (item._id == datas.data.result._id) { //checking, the id of the post which the uder disliked 
           return datas.data.result;
         } else {
           return item;
         }
       });
 
-      setPosts(newData);
-      //console.log(newData)
+      setPosts(newData); // setting the all the posts with new dislike
+     
     });
   }
 
@@ -128,8 +135,9 @@ function Home(props) {
 
               <div className="like">
                 <div className="likesquare">
-
-                {post.likes.includes(state._id) ? (
+               
+               
+                {post.likes.includes(state._id) ? ( //if the user liked before showing them dislike button
                   <h1
                     onClick={() => {
                       getDislikes(post._id);
@@ -157,12 +165,13 @@ function Home(props) {
                   <input
                 className="commentbox"
                   type="text"
+                  style={{fontSize: "14px"}}
                   value={comment}
                   onChange={(e) => {
                     setComment(e.target.value);
                     console.log(e.target.value);
                   }}
-                  placeholder="say something"
+                  placeholder="Comment"
                 />
 
                 <button className="commentbtn"
@@ -170,7 +179,7 @@ function Home(props) {
                     pushComment(comment, post._id);
                   }}
                 >
-                  Comment
+                  Add
                  
                 </button>
 

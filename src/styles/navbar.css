@@ -101,7 +101,7 @@ a.active.is-active {
   padding: 12px;
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 392px) {
   .left {
     display: flex;
     justify-content: space-between;

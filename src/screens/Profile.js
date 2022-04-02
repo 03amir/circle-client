@@ -3,10 +3,13 @@ import "../styles/profile.css";
 import Axios from "axios";
 import { userContext } from "../App";
 
-function Profile(props) {
+function Profile() {
+  
   const { state, dispatch } = useContext(userContext);
-
   const [myposts, setMyposts] = useState([]);
+
+  //getting user specific details and posts
+
   useEffect(() => {
     getMy();
   }, []);
@@ -17,7 +20,6 @@ function Profile(props) {
         Authorization: "Bearer " + localStorage.getItem("jwtcircle"),
       },
     }).then((res) => {
-      console.log(res.data.mypost);
       setMyposts(res.data.mypost);
     });
   }

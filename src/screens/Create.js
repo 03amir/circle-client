@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/signup.css";
 import { useNavigate } from "react-router-dom";
 
-function Create(props) {
+function Create() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [image, setImage] = useState("");
@@ -12,7 +12,10 @@ function Create(props) {
 
   const token = localStorage.getItem("jwtcircle");
 
-  //we have to use the use effect to prevent errors beacuse the generation of the url may take a  little bit longer time
+  // have to use the use effect to prevent errors beacuse the generation of the url may take a  little bit longer time
+
+  // saving the details of the image on the database
+
   useEffect(() => {
     if (url) {
       Axios.post(
@@ -35,6 +38,8 @@ function Create(props) {
       });
     }
   }, [url]);
+
+  //uploading the image on cloudinary
 
   function setPost() {
     const data = new FormData();

@@ -3,10 +3,10 @@ import "../styles/signup.css";
 import Logo from "../components/Logo.png";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
-
 import { userContext } from "../App";
 
-function Login(props) {
+function Login() {
+  
   const { state, dispatch } = useContext(userContext);
 
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ function Login(props) {
         if (res.status == 200) {
           localStorage.setItem("jwtcircle", res.data.token);
           localStorage.setItem("usercircle", JSON.stringify(res.data.user));
-          dispatch({ type: "USER", payload: res.data.user });
+          dispatch({ type: "USER", payload: res.data.user }); //setting the state value to the user details
           navigate("/");
         }
       })

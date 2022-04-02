@@ -4,7 +4,8 @@ import Logo from "../components/Logo.png";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function Signup(props) {
+function Signup() {
+  
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
