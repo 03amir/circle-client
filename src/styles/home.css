@@ -4,7 +4,7 @@
     width:100%;
     align-items: center;
     flex-direction: column;
-    margin-top: 40px;
+    margin-top: 90px;
     
 }
 .poster{
@@ -84,7 +84,7 @@
 .likesquare{
     display: flex;
     justify-content: space-between;
-    width: 13%;
+    
     align-items: center;
     flex-direction: row;
 
@@ -126,3 +126,40 @@
     align-items: center;
     flex-direction: row;
 }
+
+
+
+@media only screen and (max-width: 390px) {
+    .postframe {
+        width: 80%;
+    }
+ 
+    .comment {
+   
+        margin-left: -9px;}
+
+
+        .commentSquare {
+         
+            width: 65%;
+           
+        }
+
+       
+        .commentSquare {
+            gap: 5px;
+            width: 65%;
+        }
+
+       .commentbox input[type="text"] {
+            color: black;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            font-size: 10px;
+            background-color: transparent;
+          
+        }
+
+
+  }
