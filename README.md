@@ -35,14 +35,12 @@
 
 
 
-  
-<p align="right">(<a href="#Bottom">Bottom</a>)</p>
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 ## Overview
 
-Circle | MERN Stack
+CIRCLE | MERN Stack
 
 ### Features:
 
@@ -64,7 +62,6 @@ I learnt a lot about react & backend stuff while doing this including:
 ### What I learnt about react
 - It's really easy to prototype web-apps quickly, but when it comes to refining them and adding smaller details, the development time starts to slow down. 
 - The styling is quite hard, at first, to get right.
-- It's got an amazing community that spends a lot of time improving the codebase everyday!
 - Changing react versions can prove to be a hard task. Build error, npm package dependcies, and more...
   
 
@@ -84,14 +81,7 @@ I learnt a lot about react & backend stuff while doing this including:
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 ## Prerequisites
 
@@ -114,14 +104,9 @@ notice, you need client and server runs concurrently in different terminal sessi
 ## Demo
 
 
-<<<<<<< HEAD
-
-https://res.cloudinary.com/circle1/video/upload/v1648622433/bandicam_2022-03-30_11-52-34-457_xoz51t.mp4
-=======
 https://user-images.githubusercontent.com/84488052/160769704-c30cafe4-9f8c-4a8d-ad9e-7f514b4bc49b.mp4
->>>>>>> 5f2fa16292b4b4176c72c513b1c22a333d1e3718
 
-C:\Users\sekhe\Desktop\circle\client\video\bandicam 2022-03-30 11-52-34-457.mp4
+
 
 
 
