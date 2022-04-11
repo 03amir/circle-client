@@ -15,6 +15,21 @@
 
   gap: 10px;
 }
+
+.comment-delete{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 90%;
+}
+
+  .poster h3 {
+   
+    margin-left: 70%;
+    cursor: pointer;
+
+}
 .userlogo {
   font-size: 30px;
 }
@@ -22,6 +37,7 @@
 .captions {
   margin-top: -10px;
   font-size: 27px;
+
 }
 
 .postframe {
@@ -135,4 +151,9 @@
     gap: 5px;
     width: 65%;
   }
+
+  .poster h3 {
+    margin-left: 7%;
+}
+
 }

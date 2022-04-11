@@ -4,6 +4,9 @@ import Axios from "axios";
 import { userContext } from "../App";
 import { AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
+import {TiDelete} from "react-icons/ti";
+
+
 
 function Home() {
 
@@ -12,13 +15,13 @@ function Home() {
   const { state, dispatch } = useContext(userContext);
 
   //gettin all the posts
-
+console.log(state)
   useEffect(() => {
     getAllPost();
   }, []);
 
   function getAllPost() {
-    Axios.get("https://circlesocial.herokuapp.com/allposts", {
+    Axios.get("http://localhost:8000/allposts", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwtcircle"), //vlaidating the user
       },
@@ -28,12 +31,55 @@ function Home() {
     });
   }
 
+  //deleting particuler post from user
 
+  function deletepost (postId){
+    Axios.delete(
+      `http://localhost:8000/deletepost/${postId}`,{
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("jwtcircle"),
+        },
+      }
+
+    ).then((res)=>{
+      console.log(res)
+      const newData = posts.filter((post)=>{
+        return post._id != res.data._id;
+      })
+
+      setPosts(newData)
+    })
+
+  }
+
+  //deletinng comments
+
+  function deletecomment(postId,commentId){
+    Axios.delete(
+      'http://localhost:8000/deletecomment',
+      {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("jwtcircle"),
+        }},
+        {
+          postsId:postId,
+          commentId:commentId
+        }
+      
+
+    ).then((res)=>{
+      console.log( postId)
+      console.log(commentId)
+      console.log(res)
+     
+    })
+
+  }
   //function to make comments
 
   function pushComment(text, id) {
     Axios.put(
-      "https://circlesocial.herokuapp.com/comment",
+      "http://localhost:8000/comment",
       {
         text: text,
         postId: id,
@@ -62,7 +108,7 @@ function Home() {
 
   function getLikes(id) {
     Axios.put(
-      "https://circlesocial.herokuapp.com/like",
+      "http://localhost:8000/like",
       {
         postId: id,
       },
@@ -92,7 +138,7 @@ function Home() {
 
   function getDislikes(id) {
     Axios.put(
-      "https://circlesocial.herokuapp.com/dislike",
+      "http://localhost:8000/dislike",
       {
         postId: id,
       },
@@ -126,6 +172,11 @@ function Home() {
               <div className="poster">
                 <BiUserCircle className="userlogo" />
                 <h2>{post.postedBy.name}</h2>
+                {(post.postedBy._id == state._id)?<h3 onClick={()=>{deletepost(post._id)
+                }}><TiDelete size="30px"/></h3>:''
+                  
+                }
+                
               </div>
 
               <h3 className="captions">{post.title}</h3>
@@ -190,9 +241,22 @@ function Home() {
               <div className="comment">
                 {post.comments.map((comment) => {
                   return (
-                    <h2 className="commentedby">
+                    <>
+                   <div className="comment-delete">
+                   <h2 className="commentedby">
                       {comment.postedBy.name} :  <span className="comments">{comment.text}</span>
                     </h2>
+                    {
+                      comment.postedBy._id == state._id? <h4 onClick={()=>{deletecomment(post._id,comment._id)
+                      }}>delete</h4>: " "
+                    }
+                    
+
+
+                   </div>
+                   
+                    </>
+
                   );
                 })}
               </div>
