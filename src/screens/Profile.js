@@ -15,7 +15,7 @@ function Profile() {
   }, []);
 
   function getMy() {
-    Axios.get("http://localhost:8000/mypost", {
+    Axios.get("https://circlesocial.herokuapp.com/mypost", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwtcircle"),
       },

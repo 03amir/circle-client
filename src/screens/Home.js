@@ -21,7 +21,7 @@ console.log(state)
   }, []);
 
   function getAllPost() {
-    Axios.get("http://localhost:8000/allposts", {
+    Axios.get("https://circlesocial.herokuapp.com/allposts", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwtcircle"), //vlaidating the user
       },
@@ -35,7 +35,7 @@ console.log(state)
 
   function deletepost (postId){
     Axios.delete(
-      `http://localhost:8000/deletepost/${postId}`,{
+      `https://circlesocial.herokuapp.com/deletepost/${postId}`,{
         headers: {
           Authorization: "Bearer " + localStorage.getItem("jwtcircle"),
         },
@@ -56,7 +56,7 @@ console.log(state)
 
   function deletecomment(postId,commentId){
     Axios.delete(
-      'http://localhost:8000/deletecomment',
+      'https://circlesocial.herokuapp.com/deletecomment',
       {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("jwtcircle"),
@@ -79,7 +79,7 @@ console.log(state)
 
   function pushComment(text, id) {
     Axios.put(
-      "http://localhost:8000/comment",
+      "https://circlesocial.herokuapp.com/comment",
       {
         text: text,
         postId: id,
@@ -108,7 +108,7 @@ console.log(state)
 
   function getLikes(id) {
     Axios.put(
-      "http://localhost:8000/like",
+      "https://circlesocial.herokuapp.com/like",
       {
         postId: id,
       },
@@ -138,7 +138,7 @@ console.log(state)
 
   function getDislikes(id) {
     Axios.put(
-      "http://localhost:8000/dislike",
+      "https://circlesocial.herokuapp.com/dislike",
       {
         postId: id,
       },
@@ -248,7 +248,7 @@ console.log(state)
                     </h2>
                     {
                       comment.postedBy._id == state._id? <h4 onClick={()=>{deletecomment(post._id,comment._id)
-                      }}>delete</h4>: " "
+                      }}></h4>: " "
                     }
                     
 

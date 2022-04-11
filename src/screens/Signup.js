@@ -12,7 +12,7 @@ function Signup() {
   const [password, setPassword] = useState("");
 
   function addUser() {
-    Axios.post("http://localhost:8000/signup", {
+    Axios.post("https://circlesocial.herokuapp.com/signup", {
       name: name,
       password: password,
       email: email,
