@@ -3,18 +3,17 @@
 </p>
 
 <div id="top"></div>
-<h1 align="center"> Circle </h1>
+<h1 align="center"> Circle 🔘 </h1>
 
 # Features
-   
-    sign-up
-    login
-    post
-    like
-    comment
-    delete post
-    log out
-    
+
+- Create account
+- Login 
+- Create post
+- Like post
+- Comment on post
+- Delete post 
+- Logout
 
 # Tech Stack 
 
