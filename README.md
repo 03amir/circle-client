@@ -22,7 +22,17 @@
   ![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
   ![Reactjs](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
-  
+# Folder Structure
+
+```
+├── src/
+    ├── components/         code for components
+    ├── screens/            code for the pages
+    ├── reducer/            code for user action reducer
+    ├── styles/             code for design  
+ 
+```
+
 # Getting Started
 
 Below are the steps to follow to contribute to this project:
