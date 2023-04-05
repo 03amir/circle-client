@@ -19,7 +19,7 @@ function Create() {
   useEffect(() => {
     if (url) {
       Axios.post(
-        "https://circlesocial.herokuapp.com/createpost",
+        `${process.env.REACT_APP_BASE_URL}/createpost`,
         {
           title,
           body,

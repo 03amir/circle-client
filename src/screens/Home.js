@@ -21,7 +21,7 @@ console.log(state)
   }, []);
 
   function getAllPost() {
-    Axios.get("https://circlesocial.herokuapp.com/allposts", {
+    Axios.get(`${process.env.REACT_APP_BASE_URL}/allposts`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwtcircle"), //vlaidating the user
       },
@@ -35,7 +35,7 @@ console.log(state)
 
   function deletepost (postId){
     Axios.delete(
-      `https://circlesocial.herokuapp.com/deletepost/${postId}`,{
+      `${process.env.REACT_APP_BASE_URL}/deletepost/${postId}`,{
         headers: {
           Authorization: "Bearer " + localStorage.getItem("jwtcircle"),
         },
@@ -56,7 +56,7 @@ console.log(state)
 
   function deletecomment(postId,commentId){
     Axios.delete(
-      'https://circlesocial.herokuapp.com/deletecomment',
+      `${process.env.REACT_APP_BASE_URL}/deletecomment`,
       {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("jwtcircle"),
@@ -79,7 +79,7 @@ console.log(state)
 
   function pushComment(text, id) {
     Axios.put(
-      "https://circlesocial.herokuapp.com/comment",
+      `${process.env.REACT_APP_BASE_URL}/comment`,
       {
         text: text,
         postId: id,
@@ -108,7 +108,7 @@ console.log(state)
 
   function getLikes(id) {
     Axios.put(
-      "https://circlesocial.herokuapp.com/like",
+      `${process.env.REACT_APP_BASE_URL}/like`,
       {
         postId: id,
       },
@@ -138,7 +138,7 @@ console.log(state)
 
   function getDislikes(id) {
     Axios.put(
-      "https://circlesocial.herokuapp.com/dislike",
+      `${process.env.REACT_APP_BASE_URL}/dislike`,
       {
         postId: id,
       },

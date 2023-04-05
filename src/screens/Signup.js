@@ -12,7 +12,7 @@ function Signup() {
   const [password, setPassword] = useState("");
 
   function addUser() {
-    Axios.post("https://circlesocial.herokuapp.com/signup", {
+    Axios.post(`${process.env.REACT_APP_BASE_URL}/signup`, {
       name: name,
       password: password,
       email: email,

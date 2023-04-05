@@ -13,9 +13,10 @@ function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  console.log(process.env.REACT_APP_BASE_URL);
 
   function loginUser() {
-    Axios.post("https://circlesocial.herokuapp.com/login", {
+    Axios.post(`${process.env.REACT_APP_BASE_URL}/login`, {
       password: password,
       email: email,
     })
